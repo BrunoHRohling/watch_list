@@ -1,8 +1,12 @@
-@extends('layout.app')
+@extends('layouts.app')
 
 @section('title', 'Show Item')
 
 @section('content')
+
+    <nav>
+        <a href="{{ route('items.index') }}">Go back</a>
+    </nav>
 
     <div>
         <p>{{ $item->title }}</p>
@@ -43,25 +47,6 @@
     <div>
         <a href="{{ route('items.edit', ['item' => $item]) }}">Edit</a>
     </div>
-
-    {{-- <div>
-        <form action="{{ route('items.status', ['item' => $item]) }}" method="POST">
-            @csrf
-            @method('PATCH')
-            <div>
-                <label for="status">Status</label>
-                <select name="status" id="status">
-                    <option value="planned" {{ $item->status == 'planned' ? 'selected' : '' }}>Planned</option>
-                    <option value="watching" {{ $item->status == 'watching' ? 'selected' : '' }}>Watching</option>
-                    <option value="watched" {{ $item->status == 'watched' ? 'selected' : '' }}>Watched</option>
-                    <option value="dropped" {{ $item->status == 'dropped' ? 'selected' : '' }}>Dropped</option>
-                </select>
-            </div>
-            <div>
-                <button type="submit">Update Status</button>
-            </div>
-        </form>
-    </div> --}}
 
     <div>
         <form action="{{ route('items.destroy', ['item' => $item]) }}" method="POST">

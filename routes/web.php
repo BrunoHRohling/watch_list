@@ -21,5 +21,5 @@ Route::put('items/{item}', [ItemsController::class, 'update'])->name('items.upda
 
 Route::delete('items/{item}', [ItemsController::class, 'delete'])->name('items.destroy');
 
-// Route::patch('items/{item}/status', [ItemsController::class, 'status'])->name('items.status');
+Route::patch('items/{item}/status', [ItemsController::class, 'status'])->name('items.status');
 
