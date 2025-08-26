@@ -23,3 +23,4 @@ Route::delete('items/{item}', [ItemsController::class, 'delete'])->name('items.d
 
 Route::patch('items/{item}/status', [ItemsController::class, 'status'])->name('items.status');
 
+Route::patch('items/{item}/rating', [ItemsController::class, 'rating'])->name('items.rating');

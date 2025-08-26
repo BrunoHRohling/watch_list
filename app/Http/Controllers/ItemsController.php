@@ -62,4 +62,12 @@ class ItemsController extends Controller
         ]));
         return redirect()->route('items.index');
     }
+
+    public function rating(WatchItems $item, Request $request): RedirectResponse
+    {
+        $item->update($request->validate([
+            'rating' => 'required|integer|between:0,10'
+        ]));
+        return redirect()->route('items.index');
+    }
 }

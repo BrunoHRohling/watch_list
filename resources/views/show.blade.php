@@ -8,40 +8,42 @@
         <a href="{{ route('items.index') }}">Go back</a>
     </nav>
 
+    @isset($item->poster_url)
+        <img src="{{ $item->poster_url }}" alt="Item image">
+    @else
+        <img src="{{ asset('storage/images/Image-not-found.png') }}" alt="Item image">
+    @endisset
+
     <div>
-        <p>{{ $item->title }}</p>
+        <p>Title: {{ $item->title }}</p>
     </div>
 
     <div>
-        <p>{{ $item->type }}</p>
+        <p>Type: {{ $item->type }}</p>
     </div>
 
     <div>
-        <p>{{ $item->year }}</p>
+        <p>Year: {{ $item->year }}</p>
     </div>
 
     <div>
-        <p>{{ $item->status }}</p>
+        <p>Status: {{ $item->status }}</p>
     </div>
 
     <div>
-        <p>{{ $item->rating }}</p>
+        <p>Rating: {{ $item->rating }}</p>
     </div>
 
     <div>
-        <p>{{ $item->poster_url }}</p>
+        <p>Notes: {{ $item->notes }}</p>
     </div>
 
     <div>
-        <p>{{ $item->notes }}</p>
+        <p>Created at: {{ $item->created_at }}</p>
     </div>
 
     <div>
-        <p>{{ $item->created_at }}</p>
-    </div>
-
-    <div>
-        <p>{{ $item->updated_at }}</p>
+        <p>Updated at: {{ $item->updated_at }}</p>
     </div>
 
     <div>
