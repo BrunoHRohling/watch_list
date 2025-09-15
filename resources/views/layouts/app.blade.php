@@ -7,10 +7,27 @@
     <title>Watch List App</title>
 
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
     {{-- blade-formatter-disable --}}
     <style type="text/tailwindcss">
         .link {
             @apply decoration-amber-600 text-amber-800 underline
+        }
+
+        .button {
+            @apply border-2 p-1 rounded-xl font-bold 
+        }
+
+        .navbar {
+            @apply bg-amber-800 h-16
+        }
+
+        .page-title {
+            @apply text-white p-4 font-bold text-xl
+        }
+
+        .content {
+            @apply p-4
         }
     </style>
     {{-- blade-formatter-enable --}}
@@ -18,10 +35,19 @@
 
 </head>
 
-<body class="max-w-7xl p-4">
-    <h1>@yield('title')</h1>
+<body>
+    <div class="navbar">
+        <div class="page-title">
+            @yield('title')
+        </div>
+    </div>
 
-    @yield('content')
+        <div class="flex justify-center">
+            <div class="content">
+                @yield('content')
+            </div>
+        </div>
+
 </body>
 
 </html>

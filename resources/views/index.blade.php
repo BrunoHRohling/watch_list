@@ -3,15 +3,15 @@
 @section('title', 'Watch List')
 
 @section('content')
-    <nav>
-        <a href="{{ route('items.create') }}" class="link">Add Item</a>
+    <nav class="flex flex-row-reverse">
+        <a href="{{ route('items.create') }}" class="button text-amber-800">Add Item</a>
     </nav>
 
-    <div class="flex flex-row">
+
         <form action="{{ route('items.index') }}" method="GET">
-            <div class="">
-                <label for="q">Search by title:</label>
-                <input type="text" id="q" name="q" value="{{ request('q') }}" placeholder="Type a title...">
+            <div>
+                <label for="q" class="font-medium">Search by title:</label>
+                <input type="text" id="q" name="q" value="{{ request('q') }}" placeholder="Type a title..." class="">
             </div>
             <div>
                 <label for="s">Filter by status:</label>
@@ -40,7 +40,6 @@
                 </div>
             @endif
         </form>
-    </div>
 
     @forelse ($items as $item)
         <div>
