@@ -10,24 +10,28 @@
 
     {{-- blade-formatter-disable --}}
     <style type="text/tailwindcss">
+        .container {
+            @apply mx-40 my-4
+        }
+
         .link {
-            @apply decoration-amber-600 text-amber-800 underline
+            @apply decoration-blue-600 bg-blue-900 underline
         }
 
         .button {
-            @apply border-2 p-1 rounded-xl font-bold 
+            @apply border-2 p-2 rounded-lg font-bold
         }
 
         .navbar {
-            @apply bg-amber-800 h-16
+            @apply bg-blue-900 h-16
         }
 
         .page-title {
             @apply text-white p-4 font-bold text-xl
         }
 
-        .content {
-            @apply p-4
+        .search-filter {
+            @apply flex flex-row
         }
     </style>
     {{-- blade-formatter-enable --}}
@@ -42,12 +46,12 @@
         </div>
     </div>
 
+
         <div class="flex justify-center">
-            <div class="content">
+            <div class="container">
                 @yield('content')
             </div>
         </div>
-
 </body>
 
 </html>
